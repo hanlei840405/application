@@ -1,0 +1,11 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8101/eureka/
+spring:
+  application:
+    name: application
+  session:
+    store-type: redis
+  redis:
+    port: 32769
