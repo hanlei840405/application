@@ -1,11 +1,15 @@
 package com.bird.framework.application.rest.consumer;
 
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
-@FeignClient("system")
-public interface UserRest {
-    @RequestMapping("/user/username/{username}")
-    String getByUsername(@PathVariable("username") String username);
+@Component
+public class UserRest {
+    @Autowired
+    private RestTemplate restTemplate;
+
+    public String getByUsername(String username) {
+    }
 }
